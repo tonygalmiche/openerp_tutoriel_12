@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<openerp>
+  <data>
+
+    <menuitem id="menu_tutoriel12" sequence="1" name="Tutoriel 12" parent="account.menu_finance"/>
+
+    <!-- Liste par défaut des factures -->
+    <menuitem id="menu_tutoriel12_liste1" sequence="10" name="Liste 1" parent="menu_tutoriel12" action="account.action_invoice_tree1" />
+
+
+    <!-- Vue Formulaire -->
+    <record model="ir.ui.view" id="tutoriel12_form_view">
+        <field name="name">Tutoriel 12 Form View</field>
+        <field name="model">tutoriel12</field>
+        <field name="arch" type="xml">     
+            <form string="Formulaire" version="7.0">  
+                <sheet>
+                  <group col="2" colspan="4">
+                      <field name="date_facture"/> 
+                      <field name="facture_id"/> 
+                      <field name="partner_id"/> 
+                  </group>
+                </sheet>
+            </form>
+            </field>
+    </record>
+
+
+    <!-- Vue Liste -->
+    <record model="ir.ui.view" id="tutoriel12_tree_view">
+        <field name="name">Tutoriel 12 Tree View</field>
+        <field name="model">tutoriel12</field>
+        <field name="arch" type="xml">
+            <tree string="Liste">
+              <field name="date_facture"/> 
+              <field name="facture_id"/> 
+              <field name="partner_id"/> 
+            </tree>
+        </field>
+    </record>
+        
+
+    <!-- Action -->
+    <record model="ir.actions.act_window" id="tutoriel12_action">
+        <field name="name">Tutoriel 12 Action</field>
+        <field name="res_model">tutoriel12</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_tutoriel12_liste2" sequence="20" name="Liste 2" parent="menu_tutoriel12" action="tutoriel12_action" />
+
+
+  </data>
+</openerp>
+
